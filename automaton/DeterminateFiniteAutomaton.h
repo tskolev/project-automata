@@ -1,0 +1,14 @@
+//
+// Created by Tsvetomir Kolev on 22-May-20.
+//
+
+#ifndef AUTOMATON_DETERMINATEFINITEAUTOMATON_H
+#define AUTOMATON_DETERMINATEFINITEAUTOMATON_H
+
+
+class DeterminateFiniteAutomaton {
+
+};
+
+
+#endif //AUTOMATON_DETERMINATEFINITEAUTOMATON_H
