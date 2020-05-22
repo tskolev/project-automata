@@ -6,8 +6,21 @@
 #define AUTOMATON_STATE_H
 
 
-class State {
+#include <cstring>
 
+class State {
+public:
+    // constructor - default
+    State();
+    // constructor - parameters
+    State(const char *name);
+    // constructor - copy
+    State(const State &obj);
+    // destructor
+    ~State();
+
+private:
+    char *name;
 };
 
 

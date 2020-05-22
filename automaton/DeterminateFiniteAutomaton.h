@@ -6,8 +6,15 @@
 #define AUTOMATON_DETERMINATEFINITEAUTOMATON_H
 
 
-class DeterminateFiniteAutomaton {
+#include "State.h"
 
+class DeterminateFiniteAutomaton {
+public:
+    // constructor -
+
+private:
+    unsigned int numberOfStates;
+    State *stateArray;
 };
 
 
