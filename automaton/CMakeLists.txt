@@ -3,4 +3,4 @@ project(automaton)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(automaton main.cpp DeterminateFiniteAutomaton.cpp DeterminateFiniteAutomaton.h DeterminateFiniteAutomatonInt.cpp DeterminateFiniteAutomatonInt.h DeterminateFiniteAutomatonChar.cpp DeterminateFiniteAutomatonChar.h State.cpp State.h)
+add_executable(automaton main.cpp base/DeterminateFiniteAutomaton.cpp base/DeterminateFiniteAutomaton.h base/DeterminateFiniteAutomatonInt.cpp base/DeterminateFiniteAutomatonInt.h base/DeterminateFiniteAutomatonChar.cpp base/DeterminateFiniteAutomatonChar.h automaton-lib/State.cpp automaton-lib/State.h exception-handling/AutomatonException.cpp exception-handling/AutomatonException.h)
