@@ -8,10 +8,31 @@
 
 #include "DeterminateFiniteAutomaton.h"
 
-class DeterminateFiniteAutomatonInt : public DeterminateFiniteAutomaton {
+class DeterminateFiniteAutomatonInt :
+    public DeterminateFiniteAutomaton {
 
 private:
     int *alphabetInt;
+    int length;
+public:
+    // default constructor
+    DeterminateFiniteAutomatonInt();
+    // constructor with parameters
+    DeterminateFiniteAutomatonInt(int*, int);
+    // destructor
+    ~DeterminateFiniteAutomatonInt();
+    //copy constructor
+    DeterminateFiniteAutomatonInt(const DeterminateFiniteAutomatonInt& obj);
+
+ // getter and setter
+    void setAlphabetInt(int*);
+    void setLength(int);
+    char getAlphabetInt() const;
+    int getLength() const;
+    
+    
+    
+
 };
 
 
