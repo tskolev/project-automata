@@ -27,7 +27,7 @@ public:
  // getter and setter
     void setAlphabetInt(int*);
     void setLength(int);
-    char getAlphabetInt() const;
+    int* getAlphabetInt() const;
     int getLength() const;
     
     

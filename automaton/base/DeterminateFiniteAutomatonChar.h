@@ -26,9 +26,9 @@ public:
     DeterminateFiniteAutomatonChar(const DeterminateFiniteAutomatonChar& obj);
 
     // getter and setter
-    void setAlphabetChar(const char*);
+    void setAlphabetChar(char*);
     void setLength(int);
-    char getAlphabetChar() const;
+    char* getAlphabetChar() const;
     int getLength() const;
     
     
