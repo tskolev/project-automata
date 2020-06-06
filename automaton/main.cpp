@@ -22,12 +22,26 @@ int main() {
     states2[4] = State("q4");
     states2[5] = State("q5");
 
-    DeterminateFiniteAutomaton automaton(states, 5, 3);
+    unsigned accept[2] = {0, 1};
+    unsigned accept2[2] = {3, 4};
 
-    automaton.changeStartState(0);
+    DeterminateFiniteAutomaton automaton(states, 5, 0, accept, 2);
+    cout << automaton << endl;
 
-    DeterminateFiniteAutomaton a2;
-    a2.setStartState(2);
+    automaton.setAcceptStatesArray(accept2, 2);
+    cout << automaton << endl;
+
+    automaton.setStateArray(states2, 6);
+    automaton.setStartState(0);
+    automaton.changeStartStateConsole();
+    cout << automaton << endl;
+
+
+
+//    automaton.changeStartStateConsole();
+
+//    DeterminateFiniteAutomaton a2;
+//    a2.setStartState(2);
 
     return 0;
 }

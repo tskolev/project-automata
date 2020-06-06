@@ -4,10 +4,8 @@
 
 #include "State.h"
 
-// constructor - default
 State::State() : name(new char[2]{'-', '\0'}), startFlag(false), acceptFlag(false) {}
 
-// constructor - parameters
 State::State(const char *name) : startFlag(false), acceptFlag(false) {
     if (name != nullptr) {
         unsigned int len = strlen(name);
@@ -17,7 +15,6 @@ State::State(const char *name) : startFlag(false), acceptFlag(false) {
         this->name = new char[2]{'-', '\0'};
 }
 
-// constructor - copy
 State::State(const State &obj) {
     if (obj.name != nullptr) {
         unsigned int len = strlen(obj.name);
@@ -33,7 +30,6 @@ State::State(const State &obj) {
     }
 }
 
-// destructor
 State::~State() {
     if (this->name != nullptr) {
         delete[] this->name;
@@ -41,25 +37,17 @@ State::~State() {
     }
 }
 
-// setters / getters
 void State::setName(char *newName) {
-    try {
-        if (newName != nullptr) {
-            if (this->name != nullptr) {
-                delete[] this->name;
-                this->name = nullptr;
-            }
-            unsigned int len = strlen(newName);
-            this->name = new char[len + 1]{'\0'};
-            strcpy_s(this->name, (len + 1), newName);
-        } else
-            throw AutomatonException("Invalid argument - nullptr");
-    } catch (AutomatonException exc) {
-        std::cerr << "File: " << "State.cpp" << std::endl;
-        std::cerr << "Function: " << "setName(char *)" << std::endl;
-        std::cerr << "Caught: " << exc.what() << std::endl;
-        std::cerr << "Type: " << "AutomatonException" << std::endl;
-    }
+    if (newName != nullptr) {
+        if (this->name != nullptr) {
+            delete[] this->name;
+            this->name = nullptr;
+        }
+        unsigned int len = strlen(newName);
+        this->name = new char[len + 1]{'\0'};
+        strcpy_s(this->name, (len + 1), newName);
+    } else
+        this->name = nullptr;
 }
 
 void State::setStartFlag(bool newStartFlag) {
@@ -82,7 +70,6 @@ bool State::getAcceptFlag() const {
     return this->acceptFlag;
 }
 
-// operator = overload
 State &State::operator=(const State &rhs) {
     if (this != &rhs) {
         setName(rhs.name);
@@ -90,4 +77,14 @@ State &State::operator=(const State &rhs) {
         setAcceptFlag(rhs.acceptFlag);
     }
     return *this;
+}
+
+std::ostream &State::ins(std::ostream &oStream) const {
+    return oStream << "Name: " << this->name << std::endl
+                   << "Start flag: " << std::noboolalpha << this->getStartFlag() << std::endl
+                   << "Accept flag: " << std::noboolalpha << this->getAcceptFlag() << std::endl;
+}
+
+std::ostream &operator<<(std::ostream &oStream, const State &obj) {
+    return obj.ins(oStream);
 }

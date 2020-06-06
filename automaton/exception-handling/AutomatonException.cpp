@@ -4,5 +4,5 @@
 
 #include "AutomatonException.h"
 
-// constructor - parameters
+// Constructor - parameters
 AutomatonException::AutomatonException(const char *str) : logic_error(str) {}

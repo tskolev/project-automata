@@ -10,7 +10,7 @@
 
 class AutomatonException : public std::logic_error {
 public:
-    // constructor - parameters
+    // Constructor - parameters
     AutomatonException(const char *str);
 };
 
