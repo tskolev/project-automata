@@ -8,31 +8,26 @@
 
 #include "DeterminateFiniteAutomaton.h"
 
-class DeterminateFiniteAutomatonChar :
-    public DeterminateFiniteAutomaton {
+class DeterminateFiniteAutomatonChar : public DeterminateFiniteAutomaton {
+public:
+    /// Constructor - default
+    DeterminateFiniteAutomatonChar();
+    /// Constructor - parameters
+    DeterminateFiniteAutomatonChar(char *alphabetChar, unsigned int length);
+    /// Constructor - copy
+    DeterminateFiniteAutomatonChar(const DeterminateFiniteAutomatonChar &obj);
+    /// Destructor
+    virtual ~DeterminateFiniteAutomatonChar();
+
+    /// Setters
+    void setAlphabetChar(char *newAlphabetChar, unsigned int newLength);
+    /// Getters
+    char *getAlphabetChar() const;
+    int getLength() const;
 
 private:
     char *alphabetChar;
-    int length;
-
-public:
-    // default constructor
-    DeterminateFiniteAutomatonChar();
-    // constructor with parameters
-    DeterminateFiniteAutomatonChar(char*, int);
-    // destructor
-    ~DeterminateFiniteAutomatonChar();
-    // copy constructor
-    DeterminateFiniteAutomatonChar(const DeterminateFiniteAutomatonChar& obj);
-
-    // getter and setter
-    void setAlphabetChar(char*);
-    void setLength(int);
-    char* getAlphabetChar() const;
-    int getLength() const;
-    
-    
-    
+    unsigned int length;
 };
 
 

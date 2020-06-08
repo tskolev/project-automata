@@ -301,4 +301,3 @@ unsigned *DeterminateFiniteAutomaton::getAcceptStatesArray() const {
 unsigned DeterminateFiniteAutomaton::getNumberOfAcceptStates() const {
     return this->numberOfAcceptStates;
 }
-
