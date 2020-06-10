@@ -6,8 +6,8 @@
 #define AUTOMATON_DETERMINATEFINITEAUTOMATON_H
 
 
-#include "../exception-handling/AutomatonException.h"
-#include "../exception-handling/AutomatonStateException.h"
+#include "../exceptions/AutomatonException.h"
+#include "../exceptions/AutomatonStateException.h"
 #include "../automaton-lib/State.h"
 
 class DeterminateFiniteAutomaton {
@@ -62,14 +62,14 @@ public:
     void changeStartStateConsole();
 
 private:
-    // 1. States
+    /// 1. States
     State *stateArray;
     unsigned int numberOfStates;
 
-    // 4. Start state
+    /// 4. Start state
     unsigned int startState;
 
-    // 5. Accept states
+    /// 5. Accept states
     unsigned int *acceptStatesArray;
     unsigned int numberOfAcceptStates;
 };

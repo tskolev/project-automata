@@ -1,5 +1,6 @@
 #include "automaton-lib/State.h"
 #include "base/DeterminateFiniteAutomaton.h"
+#include "base/DeterminateFiniteAutomatonChar.h"
 #include <iostream>
 
 using namespace std;
@@ -35,7 +36,6 @@ int main() {
     automaton.setStartState(0);
     automaton.changeStartStateConsole();
     cout << automaton << endl;
-
 
 
 //    automaton.changeStartStateConsole();

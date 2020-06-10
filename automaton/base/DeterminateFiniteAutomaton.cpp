@@ -9,7 +9,7 @@ DeterminateFiniteAutomaton::DeterminateFiniteAutomaton() :
 
 DeterminateFiniteAutomaton::DeterminateFiniteAutomaton
         (State *stateArray, unsigned int numberOfStates, unsigned int startState,
-         unsigned int *acceptStatesArray = nullptr, unsigned int numberOfAcceptStates = 0) {
+         unsigned int *acceptStatesArray, unsigned int numberOfAcceptStates) {
 
     try {
         if (stateArray == nullptr)

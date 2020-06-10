@@ -8,7 +8,6 @@
 
 #include <iostream>
 #include <cstring>
-#include "../exception-handling/AutomatonException.h"
 
 class State {
 public:
