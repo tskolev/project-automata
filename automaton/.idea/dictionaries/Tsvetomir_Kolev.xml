@@ -3,6 +3,7 @@
     <words>
       <w>deterministicfiniteautomaton</w>
       <w>finiteautomaton</w>
+      <w>nondeterministicfiniteautomaton</w>
     </words>
   </dictionary>
 </component>

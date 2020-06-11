@@ -1,9 +1,6 @@
 #include "automaton-lib/State.h"
-//#include "base/DeterminateFiniteAutomaton1.h"
-//#include "base/DeterminateFiniteAutomatonChar.h"
-#include "base/FiniteAutomaton.h"
-#include "base/DeterministicFiniteAutomaton.h"
-//#include <iostream>
+#include "app/FiniteAutomaton.h"
+#include "app/DeterministicFiniteAutomaton.h"
 
 using namespace std;
 
