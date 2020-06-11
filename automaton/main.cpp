@@ -1,7 +1,8 @@
 #include "automaton-lib/State.h"
-//#include "base/DeterminateFiniteAutomaton.h"
+//#include "base/DeterminateFiniteAutomaton1.h"
 //#include "base/DeterminateFiniteAutomatonChar.h"
 #include "base/FiniteAutomaton.h"
+#include "base/DeterministicFiniteAutomaton.h"
 //#include <iostream>
 
 using namespace std;
@@ -30,7 +31,7 @@ int main() {
     int alphabet1[2]{0, 1};
     char alphabet2[5]{'a', 'b', 'c', 'd', 'e'};
 
-//    DeterminateFiniteAutomaton automaton(states, 5, 0, accept, 2);
+//    DeterminateFiniteAutomaton1 automaton(states, 5, 0, accept, 2);
 //    cout << automaton << endl;
 //
 //    automaton.setAcceptStatesArray(accept2, 2);
@@ -42,13 +43,18 @@ int main() {
 //    cout << automaton << endl;
 
 
-    FiniteAutomaton<char> obj1(states, 5, alphabet2, 5, 0, accept2, 2);
+//    FiniteAutomaton<char> obj1(states, 5, alphabet2, 5, 0, accept2, 2);
 
-    cout << obj1 << endl;
+    unsigned **ptr = nullptr;
+    DeterministicFiniteAutomaton<int> obj1(states, 5, alphabet1, 5, 0, accept2, 2, ptr);
+//
+//    cout << obj1 << endl;
+
+    DeterministicFiniteAutomaton<char> obj13;
 
 //    automaton.changeStartStateConsole();
 
-//    DeterminateFiniteAutomaton a2;
+//    DeterminateFiniteAutomaton1 a2;
 //    a2.setStartState(2);
 
     return 0;

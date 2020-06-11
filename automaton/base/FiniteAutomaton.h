@@ -2,8 +2,8 @@
 // Created on 11-Jun-20.
 //
 
-#ifndef AUTOMATON_DETERMINATEFINITEAUTOMATON_H
-#define AUTOMATON_DETERMINATEFINITEAUTOMATON_H
+#ifndef AUTOMATON_FINITEAUTOMATON_H
+#define AUTOMATON_FINITEAUTOMATON_H
 
 
 #include "../exceptions/AutomatonException.h"
@@ -43,6 +43,9 @@ public:
     unsigned getStartState() const;
     unsigned *getAcceptStatesArray() const;
     unsigned getNumberOfAcceptStates() const;
+
+    /// pure virtual function
+    virtual void setTransitionTable(unsigned int **newTransitionTable) = 0;
 
     /*!
      * Prints all states of the automation.
@@ -620,4 +623,4 @@ std::ostream &operator<<(std::ostream &oStream, const FiniteAutomaton<T> &obj) {
 }
 
 
-#endif //AUTOMATON_DETERMINATEFINITEAUTOMATON_H
+#endif //AUTOMATON_FINITEAUTOMATON_H

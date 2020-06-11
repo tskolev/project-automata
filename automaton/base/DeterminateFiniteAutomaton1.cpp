@@ -2,12 +2,12 @@
 // Created on 22-May-20.
 //
 
-#include "DeterminateFiniteAutomaton.h"
+#include "DeterminateFiniteAutomaton1.h"
 
-DeterminateFiniteAutomaton::DeterminateFiniteAutomaton() :
+DeterminateFiniteAutomaton1::DeterminateFiniteAutomaton1() :
         stateArray(nullptr), numberOfStates(0), startState(0), acceptStatesArray(nullptr), numberOfAcceptStates(0) {}
 
-DeterminateFiniteAutomaton::DeterminateFiniteAutomaton
+DeterminateFiniteAutomaton1::DeterminateFiniteAutomaton1
         (State *stateArray, unsigned int numberOfStates, unsigned int startState,
          unsigned int *acceptStatesArray, unsigned int numberOfAcceptStates) {
 
@@ -55,7 +55,7 @@ DeterminateFiniteAutomaton::DeterminateFiniteAutomaton
 
     } catch (AutomatonException &exc) {
         std::cerr << std::endl;
-        std::cerr << "File: " << "DeterminateFiniteAutomaton.cpp" << std::endl;
+        std::cerr << "File: " << "DeterminateFiniteAutomaton1.cpp" << std::endl;
         std::cerr << "Line: " << "14" << std::endl;
         std::cerr << "Function: " << "Constructor - parameters" << std::endl;
         std::cerr << "Caught: " << exc.what() << std::endl;
@@ -63,7 +63,7 @@ DeterminateFiniteAutomaton::DeterminateFiniteAutomaton
         std::cerr << "----- ----- -----" << std::endl;
     } catch (AutomatonStateException &exc) {
         std::cerr << std::endl;
-        std::cerr << "File: " << "DeterminateFiniteAutomaton.cpp" << std::endl;
+        std::cerr << "File: " << "DeterminateFiniteAutomaton1.cpp" << std::endl;
         std::cerr << "Line: " << "14" << std::endl;
         std::cerr << "Function: " << "Constructor - parameters" << std::endl;
         std::cerr << "Caught: " << exc.what() << std::endl;
@@ -72,7 +72,7 @@ DeterminateFiniteAutomaton::DeterminateFiniteAutomaton
     }
 }
 
-DeterminateFiniteAutomaton::DeterminateFiniteAutomaton(const DeterminateFiniteAutomaton &obj) {
+DeterminateFiniteAutomaton1::DeterminateFiniteAutomaton1(const DeterminateFiniteAutomaton1 &obj) {
     if (obj.stateArray != nullptr) {
         // Set up array of states
         this->stateArray = new State[obj.numberOfStates];
@@ -105,7 +105,7 @@ DeterminateFiniteAutomaton::DeterminateFiniteAutomaton(const DeterminateFiniteAu
     }
 }
 
-DeterminateFiniteAutomaton::~DeterminateFiniteAutomaton() {
+DeterminateFiniteAutomaton1::~DeterminateFiniteAutomaton1() {
     // Delete array of states
     if (this->stateArray != nullptr) {
         delete[] this->stateArray;
@@ -119,7 +119,7 @@ DeterminateFiniteAutomaton::~DeterminateFiniteAutomaton() {
     }
 }
 
-void DeterminateFiniteAutomaton::setStateArray(State *newStateArray, unsigned int newNumberOfStates) {
+void DeterminateFiniteAutomaton1::setStateArray(State *newStateArray, unsigned int newNumberOfStates) {
     try {
         if (newStateArray == nullptr)
             throw AutomatonException("Invalid parameter = newStateArray! (stateArray = nullptr)");
@@ -150,14 +150,14 @@ void DeterminateFiniteAutomaton::setStateArray(State *newStateArray, unsigned in
         this->numberOfStates = newNumberOfStates;
 
     } catch (AutomatonException &exc) {
-        std::cerr << "File: " << "DeterminateFiniteAutomaton.cpp" << std::endl;
+        std::cerr << "File: " << "DeterminateFiniteAutomaton1.cpp" << std::endl;
         std::cerr << "Line: " << "123" << std::endl;
         std::cerr << "Function: " << "setStateArray(State *, unsigned)" << std::endl;
         std::cerr << "Caught: " << exc.what() << std::endl;
         std::cerr << "Type: " << "AutomatonException" << std::endl;
         std::cerr << "----- ----- -----" << std::endl;
     } catch (AutomatonStateException &exc) {
-        std::cerr << "File: " << "DeterminateFiniteAutomaton.cpp" << std::endl;
+        std::cerr << "File: " << "DeterminateFiniteAutomaton1.cpp" << std::endl;
         std::cerr << "Line: " << "123" << std::endl;
         std::cerr << "Function: " << "setStateArray(State *, unsigned)" << std::endl;
         std::cerr << "Caught: " << exc.what() << std::endl;
@@ -166,7 +166,7 @@ void DeterminateFiniteAutomaton::setStateArray(State *newStateArray, unsigned in
     }
 }
 
-void DeterminateFiniteAutomaton::setStartState(unsigned int newStartState) {
+void DeterminateFiniteAutomaton1::setStartState(unsigned int newStartState) {
     try {
         // Check for available states
         if (this->stateArray == nullptr)
@@ -197,7 +197,7 @@ void DeterminateFiniteAutomaton::setStartState(unsigned int newStartState) {
                         throw AutomatonStateException("State out of range!");
 
                 } catch (AutomatonStateException &exc) {
-                    std::cerr << "File: " << "DeterminateFiniteAutomaton.cpp" << std::endl;
+                    std::cerr << "File: " << "DeterminateFiniteAutomaton1.cpp" << std::endl;
                     std::cerr << "Line: " << "190" << std::endl;
                     std::cerr << "Function: " << "setStartState(unsigned int)" << std::endl;
                     std::cerr << "Caught: " << exc.what() << std::endl;
@@ -209,7 +209,7 @@ void DeterminateFiniteAutomaton::setStartState(unsigned int newStartState) {
             }
 
         } catch (AutomatonException &exc) {
-            std::cerr << "File: " << "DeterminateFiniteAutomaton.cpp" << std::endl;
+            std::cerr << "File: " << "DeterminateFiniteAutomaton1.cpp" << std::endl;
             std::cerr << "Line: " << "184" << std::endl;
             std::cerr << "Function: " << "setStartState(unsigned int)" << std::endl;
             std::cerr << "Caught: " << exc.what() << std::endl;
@@ -220,7 +220,7 @@ void DeterminateFiniteAutomaton::setStartState(unsigned int newStartState) {
         }
 
     } catch (AutomatonStateException &exc) {
-        std::cerr << "File: " << "DeterminateFiniteAutomaton.cpp" << std::endl;
+        std::cerr << "File: " << "DeterminateFiniteAutomaton1.cpp" << std::endl;
         std::cerr << "Line: " << "170" << std::endl;
         std::cerr << "Function: " << "setStartState(unsigned int)" << std::endl;
         std::cerr << "Caught: " << exc.what() << std::endl;
@@ -229,8 +229,8 @@ void DeterminateFiniteAutomaton::setStartState(unsigned int newStartState) {
     }
 }
 
-void DeterminateFiniteAutomaton::setAcceptStatesArray(unsigned int *newAcceptStatesArray,
-                                                      unsigned int newNumberOfAcceptStates) noexcept(false) {
+void DeterminateFiniteAutomaton1::setAcceptStatesArray(unsigned int *newAcceptStatesArray,
+                                                       unsigned int newNumberOfAcceptStates) noexcept(false) {
     try {
         if (newAcceptStatesArray == nullptr && newNumberOfAcceptStates != 0)
             throw AutomatonStateException("Invalid parameter! (newNumberOfAcceptStates != 0)");
@@ -266,14 +266,14 @@ void DeterminateFiniteAutomaton::setAcceptStatesArray(unsigned int *newAcceptSta
         }
 
     } catch (AutomatonException &exc) {
-        std::cerr << "File: " << "DeterminateFiniteAutomaton.cpp" << std::endl;
+        std::cerr << "File: " << "DeterminateFiniteAutomaton1.cpp" << std::endl;
         std::cerr << "Line: " << "234" << std::endl;
         std::cerr << "Function: " << "setAcceptStatesArray(unsigned *, unsigned)" << std::endl;
         std::cerr << "Caught: " << exc.what() << std::endl;
         std::cerr << "Type: " << "AutomatonException" << std::endl;
         std::cerr << "----- ----- -----" << std::endl;
     } catch (AutomatonStateException &exc) {
-        std::cerr << "File: " << "DeterminateFiniteAutomaton.cpp" << std::endl;
+        std::cerr << "File: " << "DeterminateFiniteAutomaton1.cpp" << std::endl;
         std::cerr << "Line: " << "234" << std::endl;
         std::cerr << "Function: " << "setAcceptStatesArray(unsigned *, unsigned)" << std::endl;
         std::cerr << "Caught: " << exc.what() << std::endl;
@@ -282,22 +282,22 @@ void DeterminateFiniteAutomaton::setAcceptStatesArray(unsigned int *newAcceptSta
     }
 }
 
-State *DeterminateFiniteAutomaton::getStateArray() const {
+State *DeterminateFiniteAutomaton1::getStateArray() const {
     return this->stateArray;
 }
 
-unsigned DeterminateFiniteAutomaton::getNumberOfStates() const {
+unsigned DeterminateFiniteAutomaton1::getNumberOfStates() const {
     return this->numberOfStates;
 }
 
-unsigned DeterminateFiniteAutomaton::getStartState() const {
+unsigned DeterminateFiniteAutomaton1::getStartState() const {
     return this->startState;
 }
 
-unsigned *DeterminateFiniteAutomaton::getAcceptStatesArray() const {
+unsigned *DeterminateFiniteAutomaton1::getAcceptStatesArray() const {
     return this->acceptStatesArray;
 }
 
-unsigned DeterminateFiniteAutomaton::getNumberOfAcceptStates() const {
+unsigned DeterminateFiniteAutomaton1::getNumberOfAcceptStates() const {
     return this->numberOfAcceptStates;
 }

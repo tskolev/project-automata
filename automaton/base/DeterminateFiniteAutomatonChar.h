@@ -6,11 +6,11 @@
 #define AUTOMATON_DETERMINATEFINITEAUTOMATONCHAR_H
 
 
-#include "DeterminateFiniteAutomaton.h"
+#include "DeterminateFiniteAutomaton1.h"
 #include "../exceptions/AutomatonAlphabetException.h"
 #include "../exceptions/AutomatonTransitionTableException.h"
 
-class DeterminateFiniteAutomatonChar : public DeterminateFiniteAutomaton {
+class DeterminateFiniteAutomatonChar : public DeterminateFiniteAutomaton1 {
 public:
     /// Constructor - default
     DeterminateFiniteAutomatonChar();

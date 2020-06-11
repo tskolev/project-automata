@@ -2,25 +2,25 @@
 // Created on 22-May-20.
 //
 
-#ifndef AUTOMATON_DETERMINATEFINITEAUTOMATON_H
-#define AUTOMATON_DETERMINATEFINITEAUTOMATON_H
+#ifndef AUTOMATON_DETERMINATEFINITEAUTOMATON1_H
+#define AUTOMATON_DETERMINATEFINITEAUTOMATON1_H
 
 
 #include "../exceptions/AutomatonException.h"
 #include "../exceptions/AutomatonStateException.h"
 #include "../automaton-lib/State.h"
 
-class DeterminateFiniteAutomaton {
+class DeterminateFiniteAutomaton1 {
 public:
     /// Constructor - default
-    DeterminateFiniteAutomaton();
+    DeterminateFiniteAutomaton1();
     /// Constructor - parameters
-    DeterminateFiniteAutomaton(State *stateArray, unsigned int numberOfStates, unsigned int startState,
-                               unsigned int *acceptStateArray, unsigned int numberOfAcceptStates) noexcept(false);
+    DeterminateFiniteAutomaton1(State *stateArray, unsigned int numberOfStates, unsigned int startState,
+                                unsigned int *acceptStateArray, unsigned int numberOfAcceptStates) noexcept(false);
     /// Constructor - copy
-    DeterminateFiniteAutomaton(const DeterminateFiniteAutomaton &obj);
+    DeterminateFiniteAutomaton1(const DeterminateFiniteAutomaton1 &obj);
     /// Destructor
-    virtual ~DeterminateFiniteAutomaton();
+    virtual ~DeterminateFiniteAutomaton1();
 
     /// Setters
     void setStateArray(State *newStateArray, unsigned int newNumberOfStates) noexcept(false);
@@ -82,7 +82,7 @@ private:
  * @param obj const reference to an Object of class State
  * @return reference to an object of class std::ostream
  */
-std::ostream &operator<<(std::ostream &oStream, const DeterminateFiniteAutomaton &obj);
+std::ostream &operator<<(std::ostream &oStream, const DeterminateFiniteAutomaton1 &obj);
 
 
-#endif //AUTOMATON_DETERMINATEFINITEAUTOMATON_H
+#endif //AUTOMATON_DETERMINATEFINITEAUTOMATON1_H

@@ -4,7 +4,7 @@
 
 #include "DeterminateFiniteAutomatonChar.h"
 
-DeterminateFiniteAutomatonChar::DeterminateFiniteAutomatonChar() : DeterminateFiniteAutomaton(),
+DeterminateFiniteAutomatonChar::DeterminateFiniteAutomatonChar() : DeterminateFiniteAutomaton1(),
                                                                    alphabetChar(nullptr), alphabetLength(0),
                                                                    transitionTable(nullptr),
                                                                    tTColumnsNumber(0), tTRowsNumber(0) {}
@@ -15,7 +15,7 @@ DeterminateFiniteAutomatonChar::DeterminateFiniteAutomatonChar(char *alphabetCha
                                                                unsigned int startState,
                                                                unsigned int *acceptStateArray = nullptr,
                                                                unsigned int numberOfAcceptStates = 0) :
-        DeterminateFiniteAutomaton(stateArray, numberOfStates, startState, acceptStateArray, numberOfAcceptStates) {
+        DeterminateFiniteAutomaton1(stateArray, numberOfStates, startState, acceptStateArray, numberOfAcceptStates) {
 
     try {
         if (alphabetChar == nullptr)
@@ -80,7 +80,7 @@ DeterminateFiniteAutomatonChar::DeterminateFiniteAutomatonChar(char *alphabetCha
 }
 
 DeterminateFiniteAutomatonChar::DeterminateFiniteAutomatonChar(const DeterminateFiniteAutomatonChar &obj) :
-        DeterminateFiniteAutomaton(obj) {
+        DeterminateFiniteAutomaton1(obj) {
 
     // Set up alphabetChar AND alphabetLength
     if (obj.alphabetChar != nullptr) {

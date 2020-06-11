@@ -2,9 +2,9 @@
 // Created on 05-Jun-20.
 //
 
-#include "DeterminateFiniteAutomaton.h"
+#include "DeterminateFiniteAutomaton1.h"
 
-void DeterminateFiniteAutomaton::printAllStates() {
+void DeterminateFiniteAutomaton1::printAllStates() {
     std::cout << "[" << this->stateArray[0].getName() << "]";
     for (unsigned int i = 1; i < this->numberOfStates; ++i) {
         std::cout << " [" << this->stateArray[i].getName() << "]";
@@ -12,13 +12,13 @@ void DeterminateFiniteAutomaton::printAllStates() {
     std::cout << std::endl;
 }
 
-void DeterminateFiniteAutomaton::changeStartState(unsigned int newStartState) {
+void DeterminateFiniteAutomaton1::changeStartState(unsigned int newStartState) {
     this->stateArray[startState].setStartFlag(false);
     this->startState = 0;
     this->setStartState(newStartState);
 }
 
-void DeterminateFiniteAutomaton::changeStartStateConsole() {
+void DeterminateFiniteAutomaton1::changeStartStateConsole() {
     this->printAllStates();
     std::cout << "Current start state: [" << this->stateArray[this->startState].getName() << "]" << std::endl;
 
@@ -48,7 +48,7 @@ void DeterminateFiniteAutomaton::changeStartStateConsole() {
     } while (!done);
 }
 
-std::ostream &DeterminateFiniteAutomaton::inst(std::ostream &oStream) const {
+std::ostream &DeterminateFiniteAutomaton1::inst(std::ostream &oStream) const {
     oStream << "Number of states: " << this->numberOfStates << std::endl;
     oStream << "[" << this->stateArray[0].getName() << "]";
     for (unsigned int i = 1; i < this->numberOfStates; ++i)
@@ -77,7 +77,7 @@ std::ostream &DeterminateFiniteAutomaton::inst(std::ostream &oStream) const {
     return oStream;
 }
 
-std::ostream &operator<<(std::ostream &oStream, const DeterminateFiniteAutomaton &obj) {
+std::ostream &operator<<(std::ostream &oStream, const DeterminateFiniteAutomaton1 &obj) {
     return obj.inst(oStream);
 }
 

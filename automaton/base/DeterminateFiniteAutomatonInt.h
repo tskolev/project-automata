@@ -6,10 +6,10 @@
 #define AUTOMATON_DETERMINATEFINITEAUTOMATONINT_H
 
 
-#include "DeterminateFiniteAutomaton.h"
+#include "DeterminateFiniteAutomaton1.h"
 
 class DeterminateFiniteAutomatonInt :
-    public DeterminateFiniteAutomaton {
+    public DeterminateFiniteAutomaton1 {
 
 private:
     int *alphabetInt;
