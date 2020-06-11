@@ -1,13 +1,14 @@
 #include "automaton-lib/State.h"
-#include "base/DeterminateFiniteAutomaton.h"
-#include "base/DeterminateFiniteAutomatonChar.h"
-#include <iostream>
+//#include "base/DeterminateFiniteAutomaton.h"
+//#include "base/DeterminateFiniteAutomatonChar.h"
+#include "base/FiniteAutomaton.h"
+//#include <iostream>
 
 using namespace std;
 
 int main() {
 
-    // testing
+//     testing
     State states[5];
     states[0] = State("q0");
     states[1] = State("q1");
@@ -26,17 +27,24 @@ int main() {
     unsigned accept[2] = {0, 1};
     unsigned accept2[2] = {3, 4};
 
-    DeterminateFiniteAutomaton automaton(states, 5, 0, accept, 2);
-    cout << automaton << endl;
+    int alphabet1[2]{0, 1};
+    char alphabet2[5]{'a', 'b', 'c', 'd', 'e'};
 
-    automaton.setAcceptStatesArray(accept2, 2);
-    cout << automaton << endl;
+//    DeterminateFiniteAutomaton automaton(states, 5, 0, accept, 2);
+//    cout << automaton << endl;
+//
+//    automaton.setAcceptStatesArray(accept2, 2);
+//    cout << automaton << endl;
+//
+//    automaton.setStateArray(states2, 6);
+//    automaton.setStartState(0);
+//    automaton.changeStartStateConsole();
+//    cout << automaton << endl;
 
-    automaton.setStateArray(states2, 6);
-    automaton.setStartState(0);
-    automaton.changeStartStateConsole();
-    cout << automaton << endl;
 
+    FiniteAutomaton<char> obj1(states, 5, alphabet2, 5, 0, accept2, 2);
+
+    cout << obj1 << endl;
 
 //    automaton.changeStartStateConsole();
 

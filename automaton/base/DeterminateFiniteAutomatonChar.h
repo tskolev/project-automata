@@ -26,7 +26,7 @@ public:
     virtual ~DeterminateFiniteAutomatonChar();
 
     /// Setters
-    void setAlphabetChar(char *newAlphabetChar, unsigned int newAlphabetLength);
+    void setAlphabetChar(char *newAlphabetChar, unsigned int newAlphabetLength) noexcept(false);
     /// Getters
     char *getAlphabetChar() const;
     int getLength() const;
