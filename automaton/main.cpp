@@ -1,3 +1,4 @@
+#include <sstream>
 #include "automaton-lib/State.h"
 #include "app/FiniteAutomaton.h"
 #include "app/DeterministicFiniteAutomaton.h"
@@ -53,7 +54,6 @@ int main() {
     obj.configureTransitionTableConsole();
     obj.configureStartStateConsole();
     obj.configureAcceptStatesConsole();
-
 
 //    DeterministicFiniteAutomaton<char> obj13;
 

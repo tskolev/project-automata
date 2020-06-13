@@ -322,7 +322,10 @@ void DeterministicFiniteAutomaton<T>::configureAlphabetConsole() noexcept(false)
 
         std::cout << "Please enter a symbol for character " << "[" << (i + 1) << "]: " << std::endl;
         std::cin >> symbol;
-        std::cin.ignore();
+
+        // Clear buffer
+        std::cin.clear();
+        fflush(stdin);
 
         localAlphabet[i] = symbol;
     }
