@@ -66,7 +66,7 @@ public:
      * than calls (setStartState).
      * @param newStartState - the new index for the startState data member.
      */
-    void changeStartState(unsigned int newStartState);
+    void changeStartState(unsigned int newStartState) noexcept(false);
 
     /*!
      * Prints and takes information from the console,
@@ -74,7 +74,7 @@ public:
      * validates the input from the user,
      * than calls (changeStartState).
      */
-    void changeStartStateConsole();
+    void changeStartStateConsole() noexcept(false);
 
 private:
     /// 1. States
@@ -106,6 +106,7 @@ template<typename T>
 std::ostream &operator<<(std::ostream &oStream, const FiniteAutomaton<T> &obj);
 
 /*! Definitions: */
+/*! Constructors, Destructors, Setters, Getters - start here */
 
 template<typename T>
 FiniteAutomaton<T>::FiniteAutomaton() : stateArray(nullptr), numberOfStates(0),
@@ -460,7 +461,7 @@ void FiniteAutomaton<T>::setAcceptStatesArray
             this->acceptStatesArray = new unsigned[newNumberOfAcceptStates]{0};
             for (unsigned int i = 0; i < newNumberOfAcceptStates; ++i) {
                 this->acceptStatesArray[i] = newAcceptStatesArray[i];
-                this->stateArray[this->newAcceptStatesArray[i]].setAcceptFlag(true);
+                this->stateArray[newAcceptStatesArray[i]].setAcceptFlag(true);
             }
             this->numberOfAcceptStates = newNumberOfAcceptStates;
         } else {
@@ -523,6 +524,7 @@ unsigned FiniteAutomaton<T>::getNumberOfAcceptStates() const {
 }
 
 /*! Constructors, Destructors, Setters, Getters - end here */
+/*! Class member function - start here */
 
 template<typename T>
 void FiniteAutomaton<T>::printAllStates() {
@@ -575,7 +577,7 @@ std::ostream &FiniteAutomaton<T>::inst(std::ostream &oStream) const {
 }
 
 template<typename T>
-void FiniteAutomaton<T>::changeStartState(unsigned int newStartState) {
+void FiniteAutomaton<T>::changeStartState(unsigned int newStartState) noexcept(false) {
     // Reset startSFlag of the state
     this->stateArray[this->startState].setStartFlag(false);
     // Reset startState
@@ -585,7 +587,7 @@ void FiniteAutomaton<T>::changeStartState(unsigned int newStartState) {
 }
 
 template<typename T>
-void FiniteAutomaton<T>::changeStartStateConsole() {
+void FiniteAutomaton<T>::changeStartStateConsole() noexcept(false) {
     this->printAllStates();
     std::cout << "Current start state: [" << this->stateArray[this->startState].getName() << "]" << std::endl;
 
@@ -616,6 +618,7 @@ void FiniteAutomaton<T>::changeStartStateConsole() {
 }
 
 /*! Class member functions - end here */
+/*! Class object related, not member function - start here */
 
 template<typename T>
 std::ostream &operator<<(std::ostream &oStream, const FiniteAutomaton<T> &obj) {
